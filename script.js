@@ -1,14 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Write GeneratedPassword to the #GeneratedPassword input
 function writePassword() {
   // var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   // var passwordLength = 10;
-  var password = GeneratePassword();
-  var passwordText = document.querySelector("#password");
+  var GeneratedPassword = GeneratePassword();
+  var passwordText = document.querySelector("#GeneratedPassword");
   
-  passwordText.value = password;
+  passwordText.value = GeneratedPassword;
 
 }
 
@@ -46,7 +46,7 @@ function GeneratePassword(){
   let typeLists = [NumberList, lowercaseList, uppercaseList, charList]
   let countTypes = 0;
   if (!includeNumber && !includeLowerCase && !includeUpperCase && !includeSpecialCharacter) {
-    alert('You must select at least one character type!');
+    alert('You must select at least one character type');
   }
   for (let x=0; x< types.length; x++){
     if (type[x]) {
@@ -63,12 +63,11 @@ function GeneratePassword(){
     passwordResult.push(passwordBuffer[random]);
   };
 
-  //shuffle the result so the order is not pre-determined
-  let RandomPassword = passwordResult.sort(function () {
+  let GeneratedPassword = passwordResult.sort(function () {
     return Math.random() - 0.5;
   });
 
   // join the items in the array a string
-  return RandomPassword.join('')
+  return GeneratedPassword.join('');
 };
 
