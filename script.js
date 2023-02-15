@@ -25,6 +25,20 @@ function GeneratePassword(){
   let includeLowerCase = confirm('Would you like to include lowercase letters?');
   let includeUpperCase = confirm('Would you like to include uppercase letters?');
   let includeSpecialCharacter = confirm('Would you like to include special characters?');
+  let NumberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  let lowercaseList = [];
+  for (let x=0; x < 26; x++) {
+    lowercaseList.push(String.fromCharCode(x + 97));
+  }
+  let uppercaseList = [];
+  for (let x=0; x < lowercaseList.length; x++) {
+    uppercaseList[x] = lowercaseList[x].toUpperCase();
+  }
+  let charList = [];
+  for (let x=0; x < 15; x++) {
+    charList.push(String.fromCharCode(x + 33));
+  }
 
   let passwordBuffer = [];
   let passwordResult = [];
@@ -56,20 +70,5 @@ function GeneratePassword(){
 
   // join the items in the array a string
   return RandomPassword.join('')
-
-  let NumberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-  let lowercaseList = [];
-  for (let x=0; x < 26; x++) {
-    lowercaseList.push(String.fromCharCode(x + 97));
-  }
-  let uppercaseList = [];
-  for (let x=0; x < lowercaseList.length; x++) {
-    uppercaseList[x] = lowercaseList[x].toUpperCase();
-  }
-  let charList = [];
-  for (let x=0; x < 15; x++) {
-    charList.push(String.fromCharCode(x + 33));
-  }
 };
 
